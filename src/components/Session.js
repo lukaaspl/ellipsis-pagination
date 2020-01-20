@@ -3,9 +3,10 @@ import List from "react-bootstrap/ListGroup";
 import Item from "react-bootstrap//ListGroupItem";
 import Badge from "react-bootstrap/Badge";
 import Table from "react-bootstrap/Table";
+import Tooltiped from "./Tooltiped";
 import PropTypes from "prop-types";
 
-const Session = ({ id, ip, date, number, ...Icon }) => (
+const Session = ({ id, ip, date, number, device, os, browser }) => (
   <div className="session">
     <h4 className="session__header">
       <Badge className="session__badge" pill variant="dark">
@@ -28,13 +29,13 @@ const Session = ({ id, ip, date, number, ...Icon }) => (
       <tbody>
         <tr>
           <td>
-            <Icon.Device />
+            <Tooltiped title={device.label} Icon={device.Icon} />
           </td>
           <td>
-            <Icon.Os />
+            <Tooltiped title={os.label} Icon={os.Icon} />
           </td>
           <td>
-            <Icon.Browser />
+            <Tooltiped title={browser.label} Icon={browser.Icon} />
           </td>
         </tr>
       </tbody>
@@ -42,14 +43,19 @@ const Session = ({ id, ip, date, number, ...Icon }) => (
   </div>
 );
 
+const metaDataShape = PropTypes.shape({
+  label: PropTypes.string.isRequired,
+  Icon: PropTypes.elementType.isRequired
+}).isRequired;
+
 Session.propTypes = {
   id: PropTypes.string.isRequired,
   ip: PropTypes.string.isRequired,
   date: PropTypes.string.isRequired,
   number: PropTypes.number.isRequired,
-  Device: PropTypes.elementType.isRequired,
-  Os: PropTypes.elementType.isRequired,
-  Browser: PropTypes.elementType.isRequired
+  device: metaDataShape,
+  os: metaDataShape,
+  browser: metaDataShape
 };
 
 export default Session;

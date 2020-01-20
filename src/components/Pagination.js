@@ -16,6 +16,7 @@ const PaginationComponent = ({
   const isCurrentPageLast = currentPage === pagesCount;
 
   const changePage = number => {
+    if (currentPage === number) return;
     setCurrentPage(number);
     scrollToTop();
   };

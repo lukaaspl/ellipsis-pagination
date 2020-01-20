@@ -15,6 +15,8 @@ import {
   FaRegQuestionCircle
 } from "react-icons/fa";
 
+const unknown = { label: "Unknown", Icon: FaRegQuestionCircle };
+
 const getRandomNumber = (min, max) => {
   return Math.floor(Math.random() * (max - min + 1)) + min;
 };
@@ -40,28 +42,33 @@ const mockIp = () => {
 
 const mockDevice = () => {
   const devices = [
-    FaMobileAlt,
-    FaTabletAlt,
-    FaDesktop,
-    FaLaptop,
-    FaRegQuestionCircle
+    { label: "Mobile", Icon: FaMobileAlt },
+    { label: "Tablet", Icon: FaTabletAlt },
+    { label: "Desktop", Icon: FaDesktop },
+    { label: "Notebook", Icon: FaLaptop },
+    unknown
   ];
   return devices[getRandomNumber(0, devices.length - 1)];
 };
 
 const mockOs = () => {
-  const operationSystems = [FaWindows, FaApple, FaLinux, FaRegQuestionCircle];
+  const operationSystems = [
+    { label: "Windows", Icon: FaWindows },
+    { label: "Apple", Icon: FaApple },
+    { label: "Linux", Icon: FaLinux },
+    unknown
+  ];
   return operationSystems[getRandomNumber(0, operationSystems.length - 1)];
 };
 
 const mockBrowser = () => {
   const browsers = [
-    FaEdge,
-    FaChrome,
-    FaFirefox,
-    FaSafari,
-    FaOpera,
-    FaRegQuestionCircle
+    { label: "Edge", Icon: FaEdge },
+    { label: "Chrome", Icon: FaChrome },
+    { label: "Firefox", Icon: FaFirefox },
+    { label: "Safari", Icon: FaSafari },
+    { label: "Opera", Icon: FaOpera },
+    unknown
   ];
   return browsers[getRandomNumber(0, browsers.length - 1)];
 };
@@ -71,9 +78,9 @@ const mockSession = () => {
     id: uuid(),
     ip: mockIp(),
     date: mockDate(),
-    Device: mockDevice(),
-    Os: mockOs(),
-    Browser: mockBrowser()
+    device: mockDevice(),
+    os: mockOs(),
+    browser: mockBrowser()
   };
 };
 
