@@ -1,0 +1,106 @@
+.navbar {
+  display: flex;
+  width: 100%;
+}
+
+.session {
+  margin: 30px auto;
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 630px;
+}
+
+.session__header {
+  width: 100%;
+  text-align: center;
+  padding: 5px 0;
+}
+
+.session_badge {
+  margin-right: 7px;
+}
+
+.session__list {
+  flex: 1;
+  border-radius: 0;
+}
+
+.session__list-item {
+  border-radius: 0 !important;
+}
+
+.table {
+  flex: 1;
+  border: none;
+}
+
+.table th {
+  border-bottom-width: 1px !important;
+}
+
+.table th,
+.table td {
+  text-align: center;
+}
+
+.table th:nth-child(1),
+.table td:nth-child(1) {
+  border-left: none;
+}
+
+.table td svg {
+  font-size: 20px;
+  color: #424242;
+}
+
+.back-to-top-btn {
+  position: fixed;
+  right: 25px;
+  bottom: 25px;
+  border-radius: 50%;
+  height: 50px;
+  width: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: opacity 0.2s;
+  pointer-events: none;
+  opacity: 0;
+}
+
+.back-to-top-btn--visible {
+  pointer-events: all;
+  opacity: 1;
+}
+
+.back-to-top-btn svg {
+  font-size: 23px;
+}
+
+.muted {
+  pointer-events: none;
+}
+
+.pagination {
+  justify-content: center;
+  margin-bottom: 2rem;
+}
+
+.page-item a,
+.page-link:hover {
+  color: var(--dark);
+}
+
+.page-item.active .page-link {
+  border-color: var(--dark);
+  background-color: var(--dark);
+}
+
+.page-link:focus {
+  box-shadow: 0 0 0 0.2rem rgba(52, 58, 64, 0.25);
+}
+
+.form-control:focus {
+  border-color: var(--dark);
+  box-shadow: 0 0 0 0.2rem rgba(123, 127, 129, 0.25);
+}
