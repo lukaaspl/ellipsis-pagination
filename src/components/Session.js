@@ -8,7 +8,7 @@ import PropTypes from "prop-types";
 const Session = ({ id, ip, date, number, ...Icon }) => (
   <div className="session">
     <h4 className="session__header">
-      <Badge className="session_badge" pill variant="dark">
+      <Badge className="session__badge" pill variant="dark">
         {number}
       </Badge>
       {id}
